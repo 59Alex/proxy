@@ -19,7 +19,7 @@ felnet = Felnet(key)
 @app.route('/upload', methods=['POST'])
 def transport():
 	try:
-		body = felnet.decrypt(request.get_data())
+		body = base64.b64decode(requests.get_content().encode('utf-8'))
 		json = json.loads(decrypted_bytes.decode('utf-8))
 		response = httpx.post(redirect_path_upload, json=json)
 		return jsonify({"status": "ok"}), 200
