@@ -1,5 +1,5 @@
 from flask import Flask
-from httpx
+import httpx
 
 app = Flask(__name__)
 redirect_path = "http://62.16.42.64:8888/upload"
