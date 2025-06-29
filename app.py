@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+import base64
 import json
 import os
 import httpx
