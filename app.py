@@ -11,8 +11,8 @@ redirect_path_upload = "http://62.16.42.64:8888/upload"
 def transport():
 	try:
 		body = base64.b64decode(request.get_data())
-		json = json.loads(body.decode('utf-8'))
-		response = httpx.post(redirect_path_upload, json=json)
+		json_my = json.loads(body.decode('utf-8'))
+		response = httpx.post(redirect_path_upload, json=json_my)
 		return jsonify({"status": "ok"}), 200
 	except Exception as e:
 		app.logger.error(e)
