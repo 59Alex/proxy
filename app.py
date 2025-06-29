@@ -20,7 +20,7 @@ felnet = Felnet(key)
 def transport():
 	try:
 		body = base64.b64decode(requests.get_content().encode('utf-8'))
-		json = json.loads(decrypted_bytes.decode('utf-8))
+		json = json.loads(decrypted_bytes.decode('utf-8'))
 		response = httpx.post(redirect_path_upload, json=json)
 		return jsonify({"status": "ok"}), 200
 	except Exception as e:
