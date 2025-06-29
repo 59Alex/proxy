@@ -9,10 +9,10 @@ def transport():
 	try:
 		body = request.get_json()
 		response = httpx.post(redirect_path, json=body)
-		return jsonify({"status": "ok"), 200
+		return jsonify({"status": "ok"}), 200
 	except Exception as e:
 		app.logger.error(e)
-		return jsonify({"status": "err"), 500
+		return jsonify({"status": "err"}), 500
 
 if __name__=='__main__':
 	app.run(host='0.0.0.0', port=8080)
