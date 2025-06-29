@@ -10,7 +10,7 @@ redirect_path_upload = "http://62.16.42.64:8888/upload"
 @app.route('/upload', methods=['POST'])
 def transport():
 	try:
-		body = base64.b64decode(request.get_data()).encode('utf-8'))
+		body = base64.b64decode(request.get_data())
 		json = json.loads(body.decode('utf-8'))
 		response = httpx.post(redirect_path_upload, json=json)
 		return jsonify({"status": "ok"}), 200
